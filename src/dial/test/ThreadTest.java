@@ -22,14 +22,18 @@ class newThread implements Runnable{
         thread = new Thread(this, threadName);
         thread.start();
     }
+
+    public Thread getThread(){return this.thread;}
 }
 
 public class ThreadTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         User new_user = new User();
-
-        new_user.setUserName("New User");
+        new_user.setUserName("New Name");
         newThread newthread = new newThread("new therad", new_user);
+        Thread tru = newthread.getThread();
         newthread.start();
+        tru.join();
+        System.out.println(new_user.getUserName());
     }
 }
