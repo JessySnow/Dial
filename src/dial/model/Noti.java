@@ -4,7 +4,7 @@ public class Noti {
     protected User user;
     protected String notiInfo;
 
-    public Noti(User user){
+    protected Noti(User user){
         this.user = user;
         this.notiInfo = "null";
     }
