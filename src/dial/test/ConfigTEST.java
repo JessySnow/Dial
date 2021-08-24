@@ -11,6 +11,7 @@ public class ConfigTEST {
 
         System.out.println(props.getConfig_DialRule());
         System.out.println(props.getConfig_PassWord());
+        System.out.println(props.getConfig_UserName());
 
         System.out.println(user.getUserName());
         System.out.println(user.getPassWord());
