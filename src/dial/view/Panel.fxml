@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="28.0" layoutY="158.0" prefHeight="17.0" prefWidth="56.0" text=" Password" />
@@ -19,5 +18,6 @@
       <TextField layoutX="110.0" layoutY="154.0" />
       <TextField layoutX="110.0" layoutY="100.0" />
       <Label layoutX="147.0" layoutY="38.0" text="HZNU-Dial" />
+      <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="353.0"/>
    </children>
 </Pane>
