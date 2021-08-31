@@ -7,3 +7,9 @@
 #Label_Header{
     -fx-background-color: #707070;
 }
+
+/* Style of Text_Header */
+#Text_Header{
+    -fx-font-size: 32pt;
+    -fx-opacity: 1;
+}
