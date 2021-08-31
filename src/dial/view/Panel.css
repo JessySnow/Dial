@@ -1,4 +1,5 @@
 /*Style of Label_Header*/
+
 #Label_Header{
-    background: red;
+    -fx-background-color: gray;
 }
