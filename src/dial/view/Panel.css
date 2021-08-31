@@ -1,5 +1,9 @@
-/*Style of Label_Header*/
+/* .root */
+.root{
+    -fx-background-color: #cfcfcf;
+}
 
+/*Style of Label_Header*/
 #Label_Header{
-    -fx-background-color: gray;
+    -fx-background-color: #707070;
 }
