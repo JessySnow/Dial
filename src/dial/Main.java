@@ -6,9 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import java.util.Objects;
+
+import dial.view.InitPanel;
 
 public class Main extends Application{
 
@@ -27,6 +27,8 @@ public class Main extends Application{
         /* Edit the stage */
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
+
+        InitPanel.InitPanel(scene);
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
         primaryStage.show();
