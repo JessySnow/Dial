@@ -1,6 +1,9 @@
-/* .root */
+/* Global  */
 .root{
     -fx-background-color: #cfcfcf;
+}
+.text{
+    -fx-font-smoothing-type: gray;
 }
 
 /*Style of Label_Header*/
@@ -11,5 +14,12 @@
 /* Style of Text_Header */
 #Text_Header{
     -fx-font-size: 32pt;
+    -fx-text-fill: #707070;
     -fx-opacity: 1;
+}
+
+/* Style of Button_Login */
+#Button_Login{
+    -fx-background-color: #6d6d6d;
+    -fx-background-radius: 0;
 }

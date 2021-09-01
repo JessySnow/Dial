@@ -26,6 +26,7 @@ public class Main extends Application{
         /* Edit the stage */
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
+
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
         primaryStage.show();
     }
