@@ -1,7 +1,7 @@
 package dial.test;
-import dial.Notification;
+import dial.modelEx.Notification;
 import dial.model.User;
-import dial.WinCMD;
+import dial.modelEx.WinCMD;
 
 public class CMDTEST {
     public static void main(String[] args) {

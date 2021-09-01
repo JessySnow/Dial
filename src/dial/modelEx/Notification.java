@@ -1,4 +1,4 @@
-package dial;
+package dial.modelEx;
 import dial.model.Noti;
 import dial.model.User;
 import java.awt.Image;

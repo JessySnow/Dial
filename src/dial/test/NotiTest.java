@@ -1,6 +1,5 @@
 package dial.test;
-import dial.Notification;
-import dial.model.Noti;
+import dial.modelEx.Notification;
 import dial.model.User;
 
 public class NotiTest {

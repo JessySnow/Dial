@@ -1,6 +1,6 @@
 package dial.test;
 import dial.model.User;
-import dial.PropertiesConfig;
+import dial.modelEx.PropertiesConfig;
 
 public class ConfigTEST {
     public static void main(String[] args) {

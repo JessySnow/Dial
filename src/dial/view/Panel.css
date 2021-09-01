@@ -1,25 +1,41 @@
-/* Global  */
+/* Global Setting */
 .root{
     -fx-background-color: #cfcfcf;
 }
 .text{
     -fx-font-smoothing-type: gray;
 }
+.label{
+    -fx-text-fill: #707070;
+}
+.radio-button{
+    -fx-text-fill: #707070;
+}
 
 /*Style of Label_Header*/
 #Label_Header{
-    -fx-background-color: #707070;
+    -fx-background-color: #424242;
 }
 
 /* Style of Text_Header */
 #Text_Header{
     -fx-font-size: 32pt;
-    -fx-text-fill: #707070;
+    -fx-opacity: 1;
+}
+
+/* Style of Text_ISP */
+#Text_ISP{
+    -fx-font-size: 20pt;
     -fx-opacity: 1;
 }
 
 /* Style of Button_Login */
 #Button_Login{
-    -fx-background-color: #6d6d6d;
+    -fx-background-color: #9e9e9e;
     -fx-background-radius: 0;
 }
+
+/* Style of Label_Frame */
+#Label_Bottom{ -fx-background-color: #707070;}
+#Label_Left{ -fx-background-color: #707070;}
+#Label_Right{ -fx-background-color: #707070;}

@@ -1,4 +1,4 @@
-package dial;
+package dial.modelEx;
 import dial.model.Cmd;
 import dial.model.User;
 
