@@ -1,23 +1,23 @@
 /**
  * This class is used to Init panel ui like load an image
- * as background image
+ * as background image or add handler of button and label
  */
 
 package dial.view;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class InitPanel {
     @FXML
-    private static ImageView View_Background;
+    private ImageView View_Background;
 
-    public static void InitPanel(Scene scene){
-        loadBackgroundImage(scene);
+    public void testInit(){
+        System.out.println("Hello World!");
     }
 
-    private static void loadBackgroundImage(Scene scene){
+    @FXML
+    public void loadBackgroundImage(){
         try{
             Image backGroundImage = new Image("file:resources\\images\\BackGround.png");
             View_Background.setImage(backGroundImage);

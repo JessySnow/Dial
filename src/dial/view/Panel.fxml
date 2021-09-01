@@ -10,35 +10,39 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.image.ImageView?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dial.view.InitPanel">
+   <children>
 
-   <!--Header Label -> HZNU-Dial -->
-   <Label fx:id="Text_Header" layoutX="20.0" layoutY="34.0" text="HZNU-Dial">
-      <font> <Font name="Arial" /> </font>
-   </Label>
+      <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" />
 
-   <Label layoutX="27.0" layoutY="112.0" text="Student ID" />
-   <Label layoutX="28.0" layoutY="166.0" prefHeight="17.0" prefWidth="63.0" text=" Password" />
-   <Label fx:id="Text_ISP" layoutX="20.0" layoutY="200.0" text="ISP" />
+      <!--Header Label -> HZNU-Dial -->
+      <Label fx:id="Text_Header" layoutX="20.0" layoutY="34.0" text="HZNU-Dial">
+         <font> <Font name="Arial" /> </font>
+      </Label>
 
-   <!-- Frame Label -->
-   <Label fx:id="Label_Bottom" layoutY="375" layoutX="-1" prefWidth="359" prefHeight="5"/>
-   <Label fx:id="Label_Left" layoutX="0" layoutY="22" prefHeight="360" prefWidth="5"/>
-   <Label fx:id="Label_Right" layoutX="345" layoutY="22" prefWidth="5" prefHeight="360"/>
+      <Label layoutX="27.0" layoutY="112.0" text="Student ID" />
+      <Label layoutX="28.0" layoutY="166.0" prefHeight="17.0" prefWidth="63.0" text=" Password" />
+      <Label fx:id="Text_ISP" layoutX="20.0" layoutY="200.0" text="ISP" />
 
-   <!-- User  information inout -->
-   <JFXTextField layoutX="110.0" layoutY="100.0" />
-   <JFXPasswordField layoutX="110.0" layoutY="154.0" />
+      <!-- Frame Label -->
+      <Label fx:id="Label_Bottom" layoutY="375" layoutX="-1" prefWidth="359" prefHeight="5"/>
+      <Label fx:id="Label_Left" layoutX="0" layoutY="22" prefHeight="360" prefWidth="5"/>
+      <Label fx:id="Label_Right" layoutX="345" layoutY="22" prefWidth="5" prefHeight="360"/>
 
-   <JFXRadioButton layoutX="67.0" layoutY="250.0" mnemonicParsing="false" text="CTC" />
-   <JFXRadioButton layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
-   <JFXRadioButton layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
+      <!-- User  information inout -->
+      <JFXTextField layoutX="110.0" layoutY="100.0" />
+      <JFXPasswordField layoutX="110.0" layoutY="154.0" />
 
-   <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" />
+      <JFXRadioButton layoutX="67.0" layoutY="250.0" mnemonicParsing="false" text="CTC" />
+      <JFXRadioButton layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
+      <JFXRadioButton layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
 
-   <!-- Background Image -->
-   <ImageView fx:id="View_Background" layoutX="100" layoutY="100"/>
-   <!-- UI Element eg: Quit Button -->
-   <ImageView fx:id="Quit_View" layoutX="300" layoutY="50"/>
+      <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" />
+
+      <!-- Background Image -->
+      <ImageView fx:id="View_Background" layoutX="100" layoutY="100"/>
+      <!-- UI Element eg: Quit Button -->
+      <ImageView fx:id="Quit_View" layoutX="300" layoutY="50"/>
+
+   </children>
 </Pane>

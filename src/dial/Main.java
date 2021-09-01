@@ -1,14 +1,14 @@
 package dial;
 
+import dial.view.InitPanel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.util.Objects;
-
-import dial.view.InitPanel;
 
 public class Main extends Application{
 
@@ -21,14 +21,25 @@ public class Main extends Application{
     /* The main javafx entry of javafx application */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("view/Panel.fxml"));
+        Parent root = fxmlLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
+
         Scene scene = new Scene(root);
 
         /* Edit the stage */
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
+        primaryStage.getIcons().add(new Image("file:resources/images/BackGround.png"));
+        primaryStage.setResizable(false);
 
-        InitPanel.InitPanel(scene);
+        /******************************************************/
+        /* Load controller from fxml */
+        InitPanel initPanel =  fxmlLoader.getController();
+        System.out.println(initPanel);
+//        initPanel.testInit();
+//        initPanel.loadBackgroundImage();
+        /******************************************************/
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
         primaryStage.show();
