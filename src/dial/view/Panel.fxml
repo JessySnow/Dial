@@ -29,12 +29,12 @@
       <Label fx:id="Label_Right" layoutX="348" layoutY="22" prefWidth="2" prefHeight="360"/>
 
       <!-- User  information inout -->
-      <JFXTextField layoutX="140.0" layoutY="100.0" />
-      <JFXPasswordField layoutX="140.0" layoutY="154.0" />
+      <JFXTextField fx:id="studentID" layoutX="140.0" layoutY="100.0" />
+      <JFXPasswordField fx:id="passWord" layoutX="140.0" layoutY="154.0" />
 
-      <JFXRadioButton layoutX="67.0" layoutY="250.0" mnemonicParsing="false" text="CTC" />
-      <JFXRadioButton layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
-      <JFXRadioButton layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
+      <JFXRadioButton fx:id="CTC" layoutX="67.0" layoutY="250.0" mnemonicParsing="false" text="CTC" />
+      <JFXRadioButton fx:id="CMC" layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
+      <JFXRadioButton fx:id="CUC" layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
 
       <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" />
 

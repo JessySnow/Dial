@@ -5,8 +5,17 @@
  */
 
 package dial.view;
+import dial.model.Cmd;
+import dial.model.Config;
+import dial.model.Noti;
+import dial.model.User;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +33,25 @@ public class InitPanel {
     private ImageView View_Quit;
     @FXML
     private Pane rootPane;
+    @FXML
+    private ToggleGroup ISP;
+    @FXML
+    private RadioButton CTC;
+    @FXML
+    private RadioButton CMC;
+    @FXML
+    private RadioButton CUC;
+    @FXML
+    private TextField studentID;
+    @FXML
+    private PasswordField passWord;
+
+    /* Logic part */
+    private User user;
+    private Cmd cmd;
+    private Noti noti;
+    private Config config;
+
 
     /*
      * Automatically called after the fxml file
@@ -33,15 +61,13 @@ public class InitPanel {
      */
     @FXML
     private void initialize(){
-        loadQuitImage();
-    }
-    private void initStage(){
-        this.primStage = (Stage)rootPane.getScene().getWindow();
+        initQuitImage();
+        initISPGroup();
     }
 
     /*********************************** @FXML --> View_Quit_Handler *********************************************/
     @FXML
-    void loadQuitImage(){
+    void initQuitImage(){
         View_Quit.setImage(new Image("file:resources\\images\\Quit_Unhover.png"));
     }
     @FXML
@@ -61,6 +87,11 @@ public class InitPanel {
 
 
     /*********************************** @FXML --> Label_Header *********************************************/
+    @FXML
+    private void initStage(){
+        this.primStage = (Stage)rootPane.getScene().getWindow();
+    }
+
     @FXML
     void Label_Header_Moved_Handler(){
         if(primStage == null){
@@ -87,6 +118,31 @@ public class InitPanel {
 
 
 
-    /************************************************** Logic Part ******************************************************/
+    /************************************************** Functions ******************************************************/
+
+    private void initISPGroup(){
+        ISP = new ToggleGroup();
+        CMC.setToggleGroup(ISP);
+        CUC.setToggleGroup(ISP);
+        CTC.setToggleGroup(ISP);
+    }
+
+    private boolean isInfoFilled(){
+        if(studentID.getText().trim().isEmpty()) return false;
+        if(passWord.getText().trim().isEmpty())  return false;
+        if((RadioButton) ISP.getSelectedToggle() == null) return false;
+       return true;
+    }
+
+    /* Entrance of dial */
+    private void Dial(){
+        
+    }
+
     /********************************************************************************************************************/
+
+
+
+
+
 }
