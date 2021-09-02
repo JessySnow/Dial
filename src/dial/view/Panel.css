@@ -16,6 +16,9 @@
 #Label_Header{
     -fx-background-color: #424242;
 }
+#Label_Header:hover{
+    -fx-background-color: #707070;
+}
 
 /* Style of Text_Header */
 #Text_Header{

@@ -1,6 +1,7 @@
 package dial;
 
 import dial.view.InitPanel;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,7 +31,7 @@ public class Main extends Application{
         /* Edit the stage */
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image("file:resources/images/BackGround.png"));
+        primaryStage.getIcons().add(new Image("file:resources/images/icons.png"));
         primaryStage.setResizable(false);
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
