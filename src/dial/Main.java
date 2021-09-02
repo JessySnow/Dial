@@ -23,7 +23,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("view/Panel.fxml"));
-        Parent root = fxmlLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
 
         Scene scene = new Scene(root);
 
@@ -32,14 +32,6 @@ public class Main extends Application{
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("file:resources/images/BackGround.png"));
         primaryStage.setResizable(false);
-
-        /******************************************************/
-        /* Load controller from fxml */
-        InitPanel initPanel =  fxmlLoader.getController();
-        System.out.println(initPanel);
-//        initPanel.testInit();
-//        initPanel.loadBackgroundImage();
-        /******************************************************/
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
         primaryStage.show();
