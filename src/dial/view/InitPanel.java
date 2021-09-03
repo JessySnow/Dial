@@ -141,7 +141,19 @@ public class InitPanel {
                 updateUserInfo();
                 /* Create a new thread to dial */
                 dial_Thread("#Dial_Thread");
+            }else {
+                highLight_Unfilled();
             }
+        }
+    }
+
+    /* Highlight the controller if not filled or selected */
+    private void highLight_Unfilled(){
+        if(passWord.getText().trim().equals("")){
+            passWord.requestFocus();
+        }
+        if(studentID.getText().trim().equals("")){
+            studentID.requestFocus();
         }
     }
 
@@ -155,7 +167,7 @@ public class InitPanel {
     private boolean isInfoFilled(){
         if(studentID.getText().trim().isEmpty()) return false;
         if(passWord.getText().trim().isEmpty())  return false;
-        if((RadioButton) ISP.getSelectedToggle() == null) return false;
+        if(ISP.getSelectedToggle() == null) return false;
        return true;
     }
 
@@ -212,7 +224,7 @@ public class InitPanel {
     /********************************************************************************************************************/
 
 
-    /*************************************************** Schedule Works  ***************************************************************/
-    
-    /***********************************************************************************************************************************/
+    /*************************************************** Schedule Works(UI)  ***************************************************************/
+
+    /***************************************************************************************************************************************/
 }
