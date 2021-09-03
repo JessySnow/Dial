@@ -9,10 +9,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.image.ImageView?>
 
-<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dial.view.InitPanel">
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dial.view.InitPanel">
    <children>
 
-      <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" onMouseDragged="#Label_Header_Drag_Handler" onMousePressed="#Label_Header_Drag_Handler" onMouseMoved="#Label_Header_Moved_Handler"/>
+      <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" onMouseDragged="#Label_Header_Drag_Handler" onMousePressed="#Label_Header_Drag_Handler" onMouseMoved="#Label_Header_Moved_Handler" onMouseExited="#Label_Header_Exit_Handler"/>
 
       <!--Header Label -> HZNU-Dial -->
       <Label fx:id="Text_Header" layoutX="20.0" layoutY="34.0" text="HZNU-Dial">
@@ -36,12 +36,13 @@
       <JFXRadioButton fx:id="CMC" layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
       <JFXRadioButton fx:id="CUC" layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
 
-      <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" onMouseClicked="#Dial"/>
+      <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="30.0" prefWidth="80.0" text="LogIn" onMouseClicked="#Dial"/>
 
       <!-- Background Image -->
       <ImageView fx:id="View_Background" layoutX="245" layoutY="130"/>
       <!-- UI Element eg: Quit Button -->
-      <ImageView fx:id="View_Quit" layoutX="330" layoutY="1" fitWidth="18" fitHeight="18" onMouseClicked="#View_Quit_Click_Handler" onMouseMoved="#View_Quit_MoveIn_Handler" onMouseExited="#View_Quit_Exit_Handler"/>
+      <Label fx:id="Label_Quit" layoutX="330" layoutY="0" prefWidth="20" prefHeight="22" onMouseClicked="#View_Quit_Click_Handler" onMouseExited="#Label_Quit_Exit_Handler" onMouseMoved="#Label_Quit_MoveIn_Handler"/>
+      <ImageView fx:id="View_Quit" layoutX="332" layoutY="2" fitWidth="18" fitHeight="18" onMouseClicked="#View_Quit_Click_Handler" onMouseMoved="#View_Quit_MoveIn_Handler"/>
 
    </children>
 </Pane>

@@ -11,10 +11,7 @@ import dial.DialThread;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -44,6 +41,8 @@ public class InitPanel {
     private TextField studentID;
     @FXML
     private PasswordField passWord;
+    @FXML
+    private Label Label_Quit;
 
     /* Logic part */
     private User user;
@@ -65,7 +64,7 @@ public class InitPanel {
         fillUserInfo();
     }
 
-    /*********************************** @FXML --> View_Quit_Handler *********************************************/
+    /*********************************** @FXML --> View_Quit_Handler/Label_Quit_Handler *********************************************/
     @FXML
     void initQuitImage(){
         View_Quit.setImage(new Image("file:resources\\images\\Quit_Unhover.png"));
@@ -76,13 +75,18 @@ public class InitPanel {
     }
     @FXML
     void View_Quit_MoveIn_Handler(){
-        View_Quit.setImage(new Image("file:resources\\images\\Quit_Hover.png"));
+        Label_Quit.setStyle("-fx-background-color: #d50000;");
+    }
+
+    @FXML
+    void Label_Quit_Exit_Handler(){
+        Label_Quit.setStyle("-fx-background-color: #707070");
     }
     @FXML
-    void View_Quit_Exit_Handler(){
-        View_Quit.setImage(new Image("file:resources\\images\\Quit_Unhover.png"));
+    void Label_Quit_MoveIn_Handler(){
+        Label_Quit.setStyle("-fx-background-color: #d50000");
     }
-    /*************************************************************************************************************/
+    /*********************************************************************************************************************************/
 
 
 
@@ -97,6 +101,14 @@ public class InitPanel {
         if(primStage == null){
             initStage();
         }
+        /* Sync the color */
+        Label_Quit.setStyle("-fx-background-color: #424242");
+    }
+
+    @FXML
+    void Label_Header_Exit_Handler(){
+        /* Sync the color */
+        Label_Quit.setStyle("-fx-background-color: #707070");
     }
 
     @FXML
@@ -123,11 +135,13 @@ public class InitPanel {
     /* Entrance of dial (important) */
     @FXML
     private void Dial(){
-        if(isInfoFilled()) {
-            /* Get info from text_field */
-            updateUserInfo();
-            /* Create a new thread to dial */
-            dial_Thread("#Dial_Thread");
+        if(!user.getStatus().equals("DIAING")) {
+            if (isInfoFilled()) {
+                /* Get info from text_field */
+                updateUserInfo();
+                /* Create a new thread to dial */
+                dial_Thread("#Dial_Thread");
+            }
         }
     }
 
@@ -196,4 +210,9 @@ public class InitPanel {
         dial_thread.start();
     }
     /********************************************************************************************************************/
+
+
+    /*************************************************** Schedule Works  ***************************************************************/
+    
+    /***********************************************************************************************************************************/
 }

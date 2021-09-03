@@ -11,13 +11,22 @@
 .radio-button{
     -fx-text-fill: #707070;
 }
+.jfx-radio-button{
+    -jfx-selected-color: #707070;
+}
+.jfx-text-field{
+    -jfx-focus-color: #707070;
+}
+. jfx-password-field{
+    -jfx-focus-color: #707070;
+}
 
 /*Style of Label_Header*/
 #Label_Header{
-    -fx-background-color: #424242;
+    -fx-background-color: #707070;
 }
 #Label_Header:hover{
-    -fx-background-color: #707070;
+    -fx-background-color: #424242;
 }
 
 /* Style of Text_Header */
@@ -35,7 +44,7 @@
 /* Style of Button_Login */
 #Button_Login{
     -fx-background-color: #9e9e9e;
-    -fx-background-radius: 0;
+    -fx-background-radius: 3;
 }
 
 /* Style of Label_Frame */

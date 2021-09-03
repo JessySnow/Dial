@@ -27,6 +27,7 @@ public class DialThread implements Runnable{
 
     @Override
     public void run() {
+        user.setStatus("DIAING");
         pbkObject.copyPbk();
         winCMD.rasdialRun();
         notification.showNoti();
@@ -34,8 +35,10 @@ public class DialThread implements Runnable{
         /* If connected to isp, save user's info to hard_disk */
         if(user.getStaCode() == 0){
             propertiesConfig.writeToDisk();
+            user.setStatus("INLINE");
         }
 
+        user.setStatus("OFFLINE");
         winCMD = null;
         propertiesConfig = null;
         pbkObject = null;
