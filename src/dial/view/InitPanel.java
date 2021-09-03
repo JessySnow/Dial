@@ -34,6 +34,8 @@ public class InitPanel {
     @FXML
     private ImageView View_Quit;
     @FXML
+    private ImageView View_BackGround;
+    @FXML
     private Pane rootPane;
     @FXML
     private ToggleGroup ISP;
@@ -67,6 +69,7 @@ public class InitPanel {
     private void initialize(){
         initQuitImage();
         initISPGroup();
+        View_BackGround_Init();
 
         /* Init a user and init user_info's text_field */
         fillUserInfo();
@@ -74,7 +77,7 @@ public class InitPanel {
         updateStatus();
     }
 
-    /*********************************** @FXML --> View_Quit_Handler/Label_Quit_Handler *********************************************/
+    /*********************************** @FXML --> View_Quit_Handler/Label_Quit_Handler/View_BackGround_Init *********************************************/
     @FXML
     void initQuitImage(){
         View_Quit.setImage(new Image("file:resources\\images\\Quit_Unhover.png"));
@@ -96,6 +99,11 @@ public class InitPanel {
     @FXML
     void Label_Quit_MoveIn_Handler(){
         Label_Quit.setStyle("-fx-background-color: #d50000");
+    }
+
+    /* Load a Image as background */
+    private void View_BackGround_Init(){
+        View_BackGround.setImage(new Image("file:resources\\images\\BackGround.png"));
     }
     /*********************************************************************************************************************************/
 

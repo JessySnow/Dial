@@ -13,6 +13,9 @@
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dial.view.InitPanel">
    <children>
 
+      <!-- BackGround Image -->
+      <ImageView fx:id="View_BackGround" layoutX="-1" layoutY="-1" fitHeight="360" fitWidth="360"/>
+
       <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" onMouseDragged="#Label_Header_Drag_Handler" onMousePressed="#Label_Header_Drag_Handler" onMouseMoved="#Label_Header_Moved_Handler" onMouseExited="#Label_Header_Exit_Handler"/>
       <Circle fx:id="Circle_Status" layoutY="10" layoutX="10" radius="4" />
 
@@ -26,9 +29,9 @@
       <Label fx:id="Text_ISP" layoutX="20.0" layoutY="200.0" text="ISP" />
 
       <!-- Frame Label -->
-      <Label fx:id="Label_Bottom" layoutY="378" layoutX="-1" prefWidth="359" prefHeight="2"/>
-      <Label fx:id="Label_Left" layoutX="0" layoutY="22" prefHeight="360" prefWidth="2"/>
-      <Label fx:id="Label_Right" layoutX="348" layoutY="22" prefWidth="2" prefHeight="360"/>
+      <Label fx:id="Label_Bottom" layoutY="348" layoutX="-1" prefWidth="359" prefHeight="2"/>
+      <Label fx:id="Label_Left" layoutX="0" layoutY="22" prefHeight="340" prefWidth="2"/>
+      <Label fx:id="Label_Right" layoutX="348" layoutY="22" prefWidth="2" prefHeight="340"/>
 
       <!-- User  information inout -->
       <JFXTextField fx:id="studentID" layoutX="140.0" layoutY="100.0" />
