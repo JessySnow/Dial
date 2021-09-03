@@ -51,3 +51,8 @@
 #Label_Bottom{ -fx-background-color: #707070;}
 #Label_Left{ -fx-background-color: #707070;}
 #Label_Right{ -fx-background-color: #707070;}
+
+/* Style of Circle_Status */
+#Circle_Status{
+    -fx-fill: #INLINE;
+}

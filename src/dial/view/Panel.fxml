@@ -8,11 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Circle?>
 
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dial.view.InitPanel">
    <children>
 
       <Label fx:id="Label_Header" layoutY="-1.0" prefHeight="23.0" prefWidth="359.0" onMouseDragged="#Label_Header_Drag_Handler" onMousePressed="#Label_Header_Drag_Handler" onMouseMoved="#Label_Header_Moved_Handler" onMouseExited="#Label_Header_Exit_Handler"/>
+      <Circle fx:id="Circle_Status" layoutY="10" layoutX="10" radius="4" />
 
       <!--Header Label -> HZNU-Dial -->
       <Label fx:id="Text_Header" layoutX="20.0" layoutY="34.0" text="HZNU-Dial">

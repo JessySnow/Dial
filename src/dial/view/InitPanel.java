@@ -16,12 +16,18 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.scene.shape.Circle;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class InitPanel {
 
     private Stage primStage = null;
     private double x_offset = 0, y_offset = 0;
+    private Timer timer;
 
     public InitPanel(){}    /* Called before initialize() */
 
@@ -43,6 +49,8 @@ public class InitPanel {
     private PasswordField passWord;
     @FXML
     private Label Label_Quit;
+    @FXML
+    private Circle Circle_Status;
 
     /* Logic part */
     private User user;
@@ -62,6 +70,8 @@ public class InitPanel {
 
         /* Init a user and init user_info's text_field */
         fillUserInfo();
+
+        updateStatus();
     }
 
     /*********************************** @FXML --> View_Quit_Handler/Label_Quit_Handler *********************************************/
@@ -71,6 +81,7 @@ public class InitPanel {
     }
     @FXML
     void View_Quit_Click_Handler(){
+        timer.cancel();
         Platform.exit();
     }
     @FXML
@@ -226,5 +237,43 @@ public class InitPanel {
 
     /*************************************************** Schedule Works(UI)  ***************************************************************/
 
+    /* Show status --> Change the color of circle */
+    private void updateStatus(){
+        if(timer == null) {
+            timer = new Timer();
+        }
+        updateStatus updateStatus = new updateStatus(Circle_Status, user);
+        timer.schedule(updateStatus, 1000, 1000);
+    }
     /***************************************************************************************************************************************/
+}
+
+/* Timer class */
+class updateStatus extends TimerTask{
+    Circle circle;
+    User user;
+    int status_Count = 0;
+
+    public updateStatus(Circle circle, User user){
+        this.circle = circle;
+        this.user = user;
+    }
+
+    @Override
+    public void run() {
+        if(user.getStatus().equals("DIAING")) {
+            if (status_Count % 2 == 0) {
+                circle.setFill(Color.valueOf("#fbc02d"));
+            } else {
+                circle.setFill(Color.valueOf("#388e3c"));
+            }
+            status_Count = (status_Count + 1) % 10;
+        }
+        if(user.getStatus().equals("OFFLINE")){
+            circle.setFill(Color.valueOf("#9b0000"));
+        }
+        if(user.getStatus().equals("INLINE")){
+            circle.setFill(Color.valueOf("#388e3c"));
+        }
+    }
 }
