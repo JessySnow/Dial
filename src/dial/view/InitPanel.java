@@ -5,10 +5,9 @@
  */
 
 package dial.view;
-import dial.model.Cmd;
-import dial.model.Config;
-import dial.model.Noti;
 import dial.model.User;
+import dial.modelEx.PropertiesConfig;
+import dial.DialThread;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -48,9 +47,7 @@ public class InitPanel {
 
     /* Logic part */
     private User user;
-    private Cmd cmd;
-    private Noti noti;
-    private Config config;
+    private PropertiesConfig config;
 
 
     /*
@@ -63,6 +60,9 @@ public class InitPanel {
     private void initialize(){
         initQuitImage();
         initISPGroup();
+
+        /* Init a user and init user_info's text_field */
+        fillUserInfo();
     }
 
     /*********************************** @FXML --> View_Quit_Handler *********************************************/
@@ -120,6 +120,17 @@ public class InitPanel {
 
     /************************************************** Functions ******************************************************/
 
+    /* Entrance of dial (important) */
+    @FXML
+    private void Dial(){
+        if(isInfoFilled()) {
+            /* Get info from text_field */
+            updateUserInfo();
+            /* Create a new thread to dial */
+            dial_Thread("#Dial_Thread");
+        }
+    }
+
     private void initISPGroup(){
         ISP = new ToggleGroup();
         CMC.setToggleGroup(ISP);
@@ -134,15 +145,55 @@ public class InitPanel {
        return true;
     }
 
-    /* Entrance of dial */
-    private void Dial(){
-        
+    /* Init a user and get the info from config if user's info is not null */
+    private void initUser(){
+        user = new User();
+        config = new PropertiesConfig(user);
+        config.loadFromDisk();
+        config.initUserWithConfig();
     }
 
+    /* Fill the test field if user's info is not null */
+    private void fillUserInfo(){
+        initUser();
+        if(!user.getUserName().equals("NULL")){
+            studentID.setText(user.getUserName());
+            passWord.setText(user.getPassWord());
+
+            switch (user.getRule()){
+                case ("@cmcc"):
+                    CMC.setSelected(true);
+                    break;
+                case("@cuc"):
+                    CUC.setSelected(true);
+                    break;
+                case("@ctc"):
+                    CTC.setSelected(true);
+                    break;
+            }
+        }
+    }
+
+    /* Get user info from text_field
+    *  this function is called by dial function
+    * */
+    private void updateUserInfo(){
+        user.setUserName(studentID.getText());
+        user.setPassWord(passWord.getText());
+
+        if(CUC.isSelected()){
+            user.setRule("@cuc");
+        }else if(CMC.isSelected()){
+            user.setRule("@cmcc");
+        }else {
+            user.setRule("@ctc");
+        }
+    }
+
+
+    public void dial_Thread(String thread_name){
+        DialThread dial_thread = new DialThread(thread_name, user);
+        dial_thread.start();
+    }
     /********************************************************************************************************************/
-
-
-
-
-
 }

@@ -36,7 +36,7 @@
       <JFXRadioButton fx:id="CMC" layoutX="153.0" layoutY="250.0" mnemonicParsing="false" text="CMC" />
       <JFXRadioButton fx:id="CUC" layoutX="259.0" layoutY="250.0" mnemonicParsing="false" text="CUC" />
 
-      <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" />
+      <JFXButton fx:id="Button_Login" layoutX="130.0" layoutY="300.0" prefHeight="50.0" prefWidth="80.0" text="LogIn" onMouseClicked="#Dial"/>
 
       <!-- Background Image -->
       <ImageView fx:id="View_Background" layoutX="245" layoutY="130"/>
