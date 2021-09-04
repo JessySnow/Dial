@@ -1,7 +1,3 @@
-package dial;
-
-import dial.view.InitPanel;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,8 +18,6 @@ public class Main extends Application{
     /* The main javafx entry of javafx application */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("view/Panel.fxml"));
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
 
         Scene scene = new Scene(root);
@@ -31,7 +25,7 @@ public class Main extends Application{
         /* Edit the stage */
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image("file:resources/images/icons.png"));
+        primaryStage.getIcons().add(new Image("/images/icons.png"));
         primaryStage.setResizable(false);
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());

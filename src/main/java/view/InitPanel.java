@@ -4,10 +4,11 @@
  * as background image or add handler of button and label
  */
 
-package dial.view;
-import dial.model.User;
-import dial.modelEx.PropertiesConfig;
-import dial.DialThread;
+package view;
+
+import model.User;
+import modelEx.PropertiesConfig;
+import modelEx.DialThread;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -80,7 +81,7 @@ public class InitPanel {
     /*********************************** @FXML --> View_Quit_Handler/Label_Quit_Handler/View_BackGround_Init *********************************************/
     @FXML
     void initQuitImage(){
-        View_Quit.setImage(new Image("file:resources\\images\\Quit_Unhover.png"));
+        View_Quit.setImage(new Image("images/Quit_Unhover.png"));
     }
     @FXML
     void View_Quit_Click_Handler(){
@@ -103,7 +104,7 @@ public class InitPanel {
 
     /* Load a Image as background */
     private void View_BackGround_Init(){
-        View_BackGround.setImage(new Image("file:resources\\images\\BackGround.png"));
+        View_BackGround.setImage(new Image("images/BackGround.png"));
     }
     /*********************************************************************************************************************************/
 

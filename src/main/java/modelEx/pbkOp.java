@@ -1,5 +1,5 @@
-package dial.modelEx;
-import dial.model.PbkOperation;
+package modelEx;
+import model.PbkOperation;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

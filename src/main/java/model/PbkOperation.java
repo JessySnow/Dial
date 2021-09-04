@@ -1,6 +1,6 @@
 /* All operation about pbk file */
 
-package dial.model;
+package model;
 
 public interface PbkOperation {
     String target_path = "C:\\Users\\"+ System.getProperty("user.name") + "\\AppData\\Roaming\\Microsoft\\Network\\Connections\\Pbk\\rasphone.pbk";

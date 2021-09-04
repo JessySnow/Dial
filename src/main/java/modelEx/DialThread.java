@@ -1,10 +1,6 @@
-package dial;
+package modelEx;
 
-import dial.modelEx.WinCMD;
-import dial.model.User;
-import dial.modelEx.Notification;
-import dial.modelEx.PropertiesConfig;
-import dial.modelEx.pbkOp;
+import model.User;
 
 public class DialThread implements Runnable{
 

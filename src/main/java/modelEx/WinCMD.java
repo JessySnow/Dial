@@ -1,6 +1,6 @@
-package dial.modelEx;
-import dial.model.Cmd;
-import dial.model.User;
+package modelEx;
+import model.Cmd;
+import model.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;

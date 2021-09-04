@@ -1,6 +1,6 @@
-package dial.modelEx;
-import dial.model.Noti;
-import dial.model.User;
+package modelEx;
+import model.Noti;
+import model.User;
 import java.awt.Image;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;

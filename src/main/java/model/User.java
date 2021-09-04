@@ -1,4 +1,4 @@
-package dial.model;
+package model;
 
 public class User {
     /**

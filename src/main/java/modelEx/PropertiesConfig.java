@@ -1,7 +1,8 @@
-package dial.modelEx;
-import dial.model.Config;
-import dial.model.User;
+package modelEx;
+import model.Config;
+import model.User;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -30,18 +31,16 @@ public class PropertiesConfig extends Config implements configUser{
         user.setRule(getConfig_DialRule());
     }
     public void loadFromDisk(){
-        String configPath = System.getProperty("user.dir") + "\\resources\\config\\config.properties";
         try {
-            configObject.load(new FileInputStream(configPath));
+            configObject.load(getClass().getResourceAsStream("/config/config.properties"));
         }catch (IOException e){
             e.printStackTrace();
         }
     }
     public void writeToDisk(){
-        String configPath = System.getProperty("user.dir") + "\\resources\\config\\config.properties";
         try {
-            FileOutputStream propsOut = new FileOutputStream(configPath);
-            configObject.store(propsOut, "NULL");
+            FileOutputStream propsOut = new FileOutputStream("/config/config.properties");
+            configObject.store(propsOut, "UPDATED");
             propsOut.close();
             propsOut = null;
         }catch (IOException e){
