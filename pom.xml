@@ -4,18 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jessysnow</groupId>
+    <groupId>personal.jessysnow</groupId>
     <artifactId>Dial</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Dial</name>
+    <url>https://github.com/JessySnow/Dial</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <jfoenix.version>8.0.10</jfoenix.version>
+<!--        <jfoenix.version>8.0.10</jfoenix.version>-->
     </properties>
 
     <dependencies>
@@ -23,6 +24,8 @@
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
             <version>8.0.1</version>
+            <systemPath>${basedir}/src/main/resources/lib/jfoenix-8.0.10.jar</systemPath>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -35,6 +38,16 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>com.jfoenix</groupId>-->
+<!--                <artifactId>jfoenix</artifactId>-->
+<!--                <configuration>-->
+<!--                    <includeSystemScope>true</includeSystemScope>-->
+<!--                </configuration>-->
+<!--                <version>8.0.1</version>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
         <finalName>Dial</finalName>
 
         <pluginManagement>
@@ -55,12 +68,18 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.7</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>2.4</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -88,6 +107,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.3</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
 
                 <plugin>
