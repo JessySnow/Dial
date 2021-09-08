@@ -2,9 +2,12 @@ package modelEx;
 import model.Config;
 import model.User;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Properties;
 
 interface configUser{
@@ -38,11 +41,13 @@ public class PropertiesConfig extends Config implements configUser{
     }
     public void writeToDisk(){
         try {
-            FileOutputStream propsOut = new FileOutputStream("/config/config.properties");
+            URL url = getClass().getResource("/config/config.properties");
+            File file = new File(url.toURI().getPath());
+            FileOutputStream propsOut = new FileOutputStream(file);
             configObject.store(propsOut, "UPDATED");
             propsOut.close();
             propsOut = null;
-        }catch (IOException e){
+        }catch (IOException | URISyntaxException e){
             e.printStackTrace();
         }
     }
