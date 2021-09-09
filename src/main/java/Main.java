@@ -18,7 +18,7 @@ public class Main extends Application{
     /* The main javafx entry of javafx application */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/Panel.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Panel.fxml")));
 
         Scene scene = new Scene(root);
 

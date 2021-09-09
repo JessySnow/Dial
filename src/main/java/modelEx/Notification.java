@@ -6,6 +6,7 @@ import java.awt.SystemTray;
 import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
 import java.awt.Toolkit;
+import java.net.URL;
 
 /**
  * Only can be used in a new Thread
@@ -22,7 +23,9 @@ public class Notification extends Noti{
     public Notification(User user){
         super(user);
         systemTray = SystemTray.getSystemTray();
-        iconImage = Toolkit.getDefaultToolkit().getImage("resources/images/TrayIcon.png");
+        URL icon = getClass().getResource("../images/TrayIcon.png");
+        iconImage = Toolkit.getDefaultToolkit().getImage(icon);
+        icon = null;
         trayIcon = new TrayIcon(iconImage, "Dial");
         try {
             systemTray.add(trayIcon);

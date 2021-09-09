@@ -56,9 +56,7 @@ public class pbkOp implements PbkOperation{
         createPbk();
         if(!scanPbk()){
             try{
-                File file = new File(source_path);
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file));
+                InputStreamReader read = new InputStreamReader(getClass().getResourceAsStream(source_path));
                 BufferedReader bufferedReader = new BufferedReader(read);
                 String line;
                 while ((line = bufferedReader.readLine()) != null){
@@ -66,7 +64,6 @@ public class pbkOp implements PbkOperation{
                 }
                 bufferedReader.close();
                 read.close();
-                file = null;
             }catch (IOException e){
                 System.exit(4);
             }
