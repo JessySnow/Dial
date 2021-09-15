@@ -54,6 +54,8 @@ public class InitPanel {
     private Label Label_Quit;
     @FXML
     private Circle Circle_Status;
+    @FXML
+    private Button Button_Login;
 
     /* Logic part */
     private User user;
@@ -251,7 +253,7 @@ public class InitPanel {
         if(timer == null) {
             timer = new Timer();
         }
-        updateStatus updateStatus = new updateStatus(Circle_Status, user);
+        updateStatus updateStatus = new updateStatus(Circle_Status, user, Button_Login);
         timer.schedule(updateStatus, 1000, 1000);
     }
     /***************************************************************************************************************************************/
@@ -261,16 +263,19 @@ public class InitPanel {
 class updateStatus extends TimerTask{
     Circle circle;
     User user;
+    Button Button_Login;
     int status_Count = 0;
 
-    public updateStatus(Circle circle, User user){
+    public updateStatus(Circle circle, User user, Button Button_Login){
         this.circle = circle;
         this.user = user;
+        this.Button_Login = Button_Login;
     }
 
     @Override
     public void run() {
         if(user.getStatus().equals("DIAING")) {
+            Button_Login.setDisable(true);
             if (status_Count % 2 == 0) {
                 circle.setFill(Color.valueOf("#fbc02d"));
             } else {
@@ -279,9 +284,11 @@ class updateStatus extends TimerTask{
             status_Count = (status_Count + 1) % 10;
         }
         if(user.getStatus().equals("OFFLINE")){
+            Button_Login.setDisable(false);
             circle.setFill(Color.valueOf("#9b0000"));
         }
         if(user.getStatus().equals("INLINE")){
+            Button_Login.setDisable(false);
             circle.setFill(Color.valueOf("#388e3c"));
         }
     }
