@@ -89,8 +89,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <reporting>
-        <outputDirectory>D:\Git-Repo\Dial\target\site</outputDirectory>
-    </reporting>
 </project>
