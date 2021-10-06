@@ -1,7 +1,7 @@
 # Dial
 ### PPPOE Dial Java 101 Project
 
-#### 基于JavaFX，Material Design风格的PPPOE拨号器，调用jre调用rasdial完成拨号
+#### 基于JavaFX，Material Design风格的PPPOE拨号器，jre调用rasdial完成拨号
 
 ##### UI库: [JFoenix](https://github.com/sshahine/JFoenix)
 ##### 项目管理工具: Maven
