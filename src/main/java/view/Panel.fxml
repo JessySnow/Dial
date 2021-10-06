@@ -31,7 +31,7 @@
       <!-- Frame Label -->
       <Label fx:id="Label_Bottom" layoutY="348" layoutX="-1" prefWidth="359" prefHeight="2"/>
       <Label fx:id="Label_Left" layoutX="0" layoutY="22" prefHeight="340" prefWidth="2"/>
-      <Label fx:id="Label_Right" layoutX="348" layoutY="22" prefWidth="2" prefHeight="340"/>
+      <Label fx:id="Label_Right" layoutX="349" layoutY="22" prefWidth="2" prefHeight="340"/>
 
       <!-- User  information inout -->
       <JFXTextField fx:id="studentID" layoutX="140.0" layoutY="100.0" />
