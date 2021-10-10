@@ -26,15 +26,18 @@ public class DialThread implements Runnable{
         user.setStatus("DIAING");
         pbkObject.copyPbk();
         winCMD.rasdialRun();
-        notification.showNoti();
 
         /* If connected to isp, save user's info to hard_disk */
         if(user.getStaCode() == 0){
             propertiesConfig.writeToDisk();
             user.setStatus("INLINE");
         }
+        else{
+            user.setStatus("OFFLINE");
+        }
 
-        user.setStatus("OFFLINE");
+        notification.showNoti();
+
         winCMD = null;
         propertiesConfig = null;
         pbkObject = null;

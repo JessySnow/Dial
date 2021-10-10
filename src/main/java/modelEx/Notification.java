@@ -62,6 +62,13 @@ public class Notification extends Noti{
         updateNoti();
         trayIcon.displayMessage("Connection Status", notiInfo, user.getStatus().equals("INLINE")?
                                     MessageType.INFO : MessageType.ERROR);
+
+        try{
+            Thread.sleep(6500);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         systemTray.remove(trayIcon);
     }
 }
