@@ -6,6 +6,9 @@
 
 package view;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import model.User;
 import modelEx.PropertiesConfig;
 import modelEx.DialThread;
@@ -21,6 +24,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.shape.Circle;
 
+import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -261,10 +265,10 @@ public class InitPanel {
 
 /* Timer class */
 class updateStatus extends TimerTask{
-    Circle circle;
-    User user;
-    Button Button_Login;
-    int status_Count = 0;
+    private Circle circle;
+    private User user;
+    private Button Button_Login;
+    private int status_Count = 0;
 
     public updateStatus(Circle circle, User user, Button Button_Login){
         this.circle = circle;

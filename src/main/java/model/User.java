@@ -9,7 +9,7 @@ public class User {
      */
     private String userName;
     private String passWord;
-    private String Status;
+    private volatile String Status;
     private String Rule;
     private int staCode;
 
