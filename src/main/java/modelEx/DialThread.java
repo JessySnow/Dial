@@ -6,7 +6,7 @@ public class DialThread implements Runnable{
 
     private Thread dialThread;
     private String threadName;
-    private User user;  /* Get form main thread */
+    private volatile User user;  /* Get form main thread */
     private WinCMD winCMD ; /* Create in this thread */
     private Notification notification; /* Create in this thread */
     private PropertiesConfig propertiesConfig;
