@@ -1,21 +1,19 @@
 # Dial
-### PPPOE Dial Java 101 Project
+### ***PPPOE Dial Java 101 Project***
 
-#### 基于JavaFX，Material Design风格的PPPOE拨号器，jre调用rasdial完成拨号
+### JavaFX，Material Design风格的PPPOE拨号器
 
-##### UI库: [JFoenix](https://github.com/sshahine/JFoenix)
-##### 项目管理工具: Maven
-##### 用户界面:
+#### UI库: [JFoenix](https://github.com/sshahine/JFoenix)
 
 <img width="263" alt="Dial_2021-9-4" src="https://user-images.githubusercontent.com/61576653/132090545-77392ed8-9d2b-4f29-a216-c81183713067.png">
 
-##### 如何编译
+##### 如何打包
 ```
-# pom 默认执行package
-mvn compile
+mvn package
 ```
 
-##### 运行环境
+### 运行环境
+#### 系统版本
 ##### ***Windows10***、***Windows11***
-##### Java 版本
+#### Java 版本
 ##### Java8，不向上兼容(JFoenix1.x只支持到Java8)
