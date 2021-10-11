@@ -11,5 +11,11 @@
 
 ##### 如何编译
 ```
+# pom 默认执行package
 mvn compile
 ```
+
+##### 运行环境
+##### ***Windows10***、***Windows11***
+##### Java 版本
+##### Java8，不向上兼容(JFoenix1.x只支持到Java8)
