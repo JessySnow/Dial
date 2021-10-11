@@ -23,14 +23,15 @@ public class Notification extends Noti{
     public Notification(User user){
         super(user);
         systemTray = SystemTray.getSystemTray();
-        URL icon = getClass().getResource("../images/TrayIcon.png");
+        URL icon = getClass().getResource("/images/TrayIcon.png");
         iconImage = Toolkit.getDefaultToolkit().getImage(icon);
-        icon = null;
         trayIcon = new TrayIcon(iconImage, "Dial");
         try {
             systemTray.add(trayIcon);
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            icon = null;
         }
     }
 

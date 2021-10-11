@@ -15,9 +15,14 @@ public class DialThread implements Runnable{
     public DialThread(String threadName, User user){
         this.threadName = threadName;
         this.user = user;
+
+        System.out.println(0);
         winCMD = new WinCMD(user);
+        System.out.println("1");
         notification = new Notification(user);
+        System.out.println(2);
         propertiesConfig = new PropertiesConfig(user);
+        System.out.println(3);
         pbkObject = new pbkOp();
     }
 

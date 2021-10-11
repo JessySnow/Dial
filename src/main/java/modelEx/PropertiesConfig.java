@@ -11,12 +11,12 @@ import java.net.URL;
 import java.util.Properties;
 
 interface configUser{
-    public void setConfig_UserName(String USER_NAME);
-    public void setConfig_PassWord(String PASS_WORD);
-    public void setConfig_DialRule(String DIAL_RULE);
-    public String getConfig_UserName();
-    public String getConfig_PassWord();
-    public String getConfig_DialRule();
+    void setConfig_UserName(String USER_NAME);
+    void setConfig_PassWord(String PASS_WORD);
+    void setConfig_DialRule(String DIAL_RULE);
+    String getConfig_UserName();
+    String getConfig_PassWord();
+    String getConfig_DialRule();
 }
 
 public class PropertiesConfig extends Config implements configUser{

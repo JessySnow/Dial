@@ -18,7 +18,7 @@ public class Main extends Application{
     /* The main javafx entry of javafx application */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Panel.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Panel.fxml")));
 
         Scene scene = new Scene(root);
 
@@ -28,7 +28,7 @@ public class Main extends Application{
         primaryStage.getIcons().add(new Image("/images/icons.png"));
         primaryStage.setResizable(false);
 
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("view/Panel.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Panel.css")).toExternalForm());
         primaryStage.show();
     }
 }
